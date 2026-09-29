@@ -1,0 +1,66 @@
+/*
+Author: Daniel Pena Arias
+File Name: styles.css
+Date: 09/28/2026
+*/
+
+/* Shared layout and accessible controls for Dan's Hobbies. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #101010; color: #f5f5f5; font-family: 'Roboto Slab', Georgia, serif; line-height: 1.6; }
+[hidden] { display: none !important; }
+a { color: #a9d6ff; text-underline-offset: .2em; }
+a:visited { color: #d4bfff; }
+a:hover { color: #fff; }
+:focus-visible { outline: 3px solid #ffd27d; outline-offset: 5px; }
+.skip { position: absolute; left: -10000px; }
+.skip:focus { left: 1rem; top: 1rem; padding: .75rem; color: #111; background: #fff; z-index: 10; }
+#container { max-width: 1200px; margin: auto; }
+header { padding: 1rem; }
+header img { display: block; width: 235px; height: auto; margin: auto; }
+.site-nav { padding: 1rem; }
+.site-nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; list-style: none; padding: 0; margin: 0; }
+.site-nav a, .menu-toggle { display: block; padding: .7rem 1rem; border-radius: .35rem; color: #fff; font-family: 'Francois One', sans-serif; font-size: 1.1rem; }
+.site-nav a { text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { background: #353535; text-decoration: underline; }
+.menu-toggle { background: #252525; border: 1px solid #aaa; cursor: pointer; margin: 0 0 .75rem auto; }
+main { background: #303030; padding: clamp(1rem, 4vw, 3rem); font-size: 1.1rem; overflow-wrap: anywhere; }
+main > p, main > div:not(.grid), main > h1, main > h2, main > section, .guitar-list, .jump-links { max-width: 72ch; margin-left: auto; margin-right: auto; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+h2 { margin-top: 2rem; }
+main img { display: block; max-width: 100%; height: auto; border-radius: .4rem; }
+.guitar-list { padding-left: 1.5rem; }
+.guitar-list > li { margin: 3rem 0; padding-bottom: 2rem; border-bottom: 1px solid #666; }
+.guitar-list img, #content > img { width: min(100%, 400px); }
+.jump-links { padding: 1rem 1.5rem; background: #222; border-radius: .5rem; }
+.jump-links h2 { margin-top: 0; }
+.jump-links li { margin: .4rem 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1.5rem; }
+.frame { margin: 0; }
+.frame img { width: 100%; }
+.pic-text { padding: .75rem; text-align: center; font-weight: bold; }
+.table-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 620px; }
+caption { text-align: left; padding: .75rem 0; font-weight: bold; }
+th, td { border: 1px solid #777; text-align: left; vertical-align: top; padding: .75rem; }
+th { background: #181818; }
+.table-hint { font-size: .9rem; }
+#contact, .contact-card { text-align: center; }
+.contact-card { padding: 1.5rem; background: #222; border-radius: .5rem; margin-top: 2rem; }
+.email-button { display: inline-block; background: #a9d6ff; color: #101010 !important; padding: .8rem 1.3rem; border-radius: .4rem; font-weight: bold; }
+footer { padding: 2rem 1rem; text-align: center; font-size: .9rem; }
+footer p { margin: .5rem 0; }
+@media (max-width: 629px) { .site-nav ul { flex-direction: column; } .site-nav a { text-align: center; } }
+@media print {
+ body, main { color: #000; background: #fff; }
+ .site-nav, .skip, .jump-links, .table-hint { display: none; }
+ a, a:visited { color: #000; }
+ main { padding: 0; font-size: 11pt; }
+ th, td { color: #000; background: #fff; border-color: #444; }
+ table { min-width: 0; font-size: 9pt; }
+ .table-scroll { overflow: visible; }
+ .contact-card { background: #fff; }
+}
+
+table { overflow-wrap: normal; min-width: 850px; }
+@media print { table { min-width: 0; } }
